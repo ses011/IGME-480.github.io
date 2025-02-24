@@ -3,13 +3,16 @@ const places = [
     { name: "Rochester Abandoned Subway", latitude: 43.154722, longitude: -77.609722 },
     { name: "Washington Square Park", latitude: 43.1534, longitude: -77.6053 },
     { name: "Rochester Contemporary Art Center", latitude: 43.156619, longitude: -77.600730 },
-    { name: "Library", latitude: 43.0835, longitude: -77.676 }
+    { name: "Library", latitude: 43.08355, longitude: -77.676 }
 ];
 
 const loadPlaces = () => {
     const scene = document.querySelector("a-scene");
 
     places.forEach(place => {
+        const shape = document.createElement("a-sphere");
+        shape.setAttribute("color", "blue");
+        
         const entity = document.createElement("a-entity");
 
         entity.setAttribute("gps-entity-place", `latitude: ${place.latitude}, longitude: ${place.longitude}`);
