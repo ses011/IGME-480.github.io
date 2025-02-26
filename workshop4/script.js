@@ -22,7 +22,8 @@ const loadPlaces = () => {
         text.setAttribute("position", "0 2 0");
         entity.appendChild(text);
 
-        entity.addEventListener("click", () => alert(`You clicked on: ${place.name}`));
+        entity.addEventListener("click", () => text.setAttribute("value", `You clicked on: ${place.name}`));
+        entity.setAttribute("class", "clickable");
 
         scene.appendChild(entity);
     });
